@@ -1,0 +1,315 @@
+/* ===== ACCOUNT PAGE CSS ===== */
+
+/* AUTH */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 40px) 24px 60px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(46,155,127,.15) 0%, transparent 60%);
+}
+
+.auth-card {
+  background: var(--dark-700);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.4);
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.auth-tabs {
+  display: flex;
+  background: var(--dark-600);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 28px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: calc(var(--radius-md) - 4px);
+  color: var(--mid-300);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-tab.active {
+  background: var(--green-500);
+  color: var(--white);
+}
+
+.auth-error {
+  background: rgba(239,68,68,.1);
+  border: 1px solid rgba(239,68,68,.3);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: .82rem;
+  color: #f87171;
+  margin-bottom: 16px;
+}
+
+.input-with-toggle {
+  position: relative;
+}
+
+.input-with-toggle .form-input {
+  padding-right: 44px;
+}
+
+.pwd-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mid-300);
+  display: flex;
+  align-items: center;
+  transition: var(--transition-fast);
+}
+
+.pwd-toggle:hover { color: var(--white); }
+
+.pwd-strength {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--dark-500);
+  transition: background .3s;
+}
+
+.strength-bar.weak   { background: #f87171; }
+.strength-bar.medium { background: #fbbf24; }
+.strength-bar.strong { background: var(--green-400); }
+
+/* ACCOUNT LAYOUT */
+.account-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.account-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.account-profile-card {
+  background: var(--dark-700);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.profile-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.profile-name {
+  font-weight: 600;
+  color: var(--white);
+  font-size: .92rem;
+}
+
+.profile-email {
+  font-size: .78rem;
+  color: var(--mid-300);
+  margin-top: 2px;
+}
+
+.account-nav {
+  background: var(--dark-700);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.account-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  color: var(--mid-200);
+  font-family: var(--font-body);
+  font-size: .88rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.account-nav-item:last-child { border-bottom: none; }
+
+.account-nav-item:hover {
+  background: rgba(255,255,255,.04);
+  color: var(--white);
+}
+
+.account-nav-item.active {
+  background: rgba(110,207,181,.1);
+  color: var(--green-300);
+}
+
+.logout-btn {
+  color: #f87171 !important;
+}
+
+.logout-btn:hover {
+  background: rgba(239,68,68,.08) !important;
+}
+
+.account-tab {
+  display: none;
+}
+
+.account-tab.active {
+  display: block;
+  animation: fadeIn .3s ease;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Orders */
+.order-item {
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+
+.order-item:hover { border-color: rgba(110,207,181,.15); }
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.order-id {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--white);
+  font-size: .9rem;
+}
+
+.order-date {
+  font-size: .78rem;
+  color: var(--mid-300);
+  margin-top: 2px;
+}
+
+.order-items-preview {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.order-item-thumb {
+  width: 44px;
+  height: 44px;
+  background: var(--dark-600);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .82rem;
+}
+
+.order-total {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--green-300);
+}
+
+.no-orders {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--mid-300);
+}
+
+.no-orders .emoji { font-size: 3rem; margin-bottom: 12px; }
+.no-orders h3 { color: var(--white); margin-bottom: 8px; }
+
+/* Security items */
+.security-items { display: flex; flex-direction: column; gap: 12px; }
+
+.security-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--dark-600);
+  border-radius: var(--radius-md);
+}
+
+.security-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .account-grid { grid-template-columns: 1fr; }
+  .account-sidebar { position: static; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .auth-card { padding: 28px 20px; }
+}
